@@ -4,6 +4,7 @@ To request data from the microservice:
 The server-client relationship for this microservice utilizes the request / reply pattern. To initiate, the client needs a request socket connected to tcp://localhost:5555, then to send a string to the server (any string will do).
 Example from python: 
 this = zmq.Context()
+socket = this.socket(zmq.REQ)
 socket.connect(‘tcp://localhost:5555’)
 socket.send_string(‘GO!’)
 
